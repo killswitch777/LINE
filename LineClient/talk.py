@@ -16,7 +16,7 @@ class Talk(object):
 
     def __init__(self):
         self.isLogin      = True
-        self.message      = Message(to='u5a080a46b057433ac269b0a0e1776431', _from = self.getProfile().mid, text='Bots active', contentMetadata={}, contentType = 0)
+        self.message      = Message(to='u5a080a46b057433ac269b0a0e1776431', _from = self.profile.mid, text='Bots active', contentMetadata={}, contentType = 0)
         self.talk.sendMessage(0, self.message)
         self.repos()
 
