@@ -40,11 +40,11 @@ def fetch():
         except KeyboardInterrupt:
             sys.exit('Keyboard Interrupt')
         except TalkException:
-            client.lookError()
+            client.callback.default(client.lookError())
         except ShouldSyncException:
             client.revision = max(op.revision, client.revision)
         except Exception as e:
-            client.lookError()
+            client.callback.default(client.lookError())
 
 if __name__ == '__main__':
     fetch()
